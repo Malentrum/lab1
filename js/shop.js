@@ -67,85 +67,46 @@ $(document).ready(function() {
 	}
 
 	function addRow() {
-		for(let i=0; i<cart.length; i++){
-		
-		if(cart[i]>0){
-		/*	document.querySelector('.cart-body').insertAdjacentHTML(
-			'afterbegin',
-			`<div class="row">
-			<input readonly class="product"></input>
-			<input readonly class="amount"></input>
-			</div>`      
-			) */
+		for (let i = 0; i < cart.length; i++) {
+			if (cart[i] > 0) {
+				let productName = '';
 	
-			switch(i) {
-				case 0:
-					//var t = "Product1";
+				switch (i) {
+					case 0:
+						productName = "Microsoft Office 365 for Family";
+						break;
+					case 1:
+						productName = "Microsoft Office 365 Personal";
+						break;
+					case 2:
+						productName = "Microsoft Office 2021 Pro";
+						break;
+					case 3:
+						productName = "Microsoft Office 2019 Pro Plus";
+						break;
+					case 4:
+						productName = "Microsoft Office 365 (1 Year)";
+						break;
+					case 5:
+						productName = "Microsoft Office 2016 Pro Plus";
+						break;
+					default:
+						break;
+				}
+	
+				if (productName) {
 					document.querySelector('.cart-body').insertAdjacentHTML(
-			'afterbegin',
-			`<div class="row">
-			<input readonly class="product0"></input>
-			<input readonly class="amount0"></input>
-			</div>`)
-			$('.product0').val("Product1");
-			$('.amount0').val(cart[i]);
-					break;
-
-				case 1: 
-					//var t = "Product2";
-					document.querySelector('.cart-body').insertAdjacentHTML(
-			'afterbegin',
-			`<div class="row">
-			<input readonly class="product1"></input>
-			<input readonly class="amount1"></input>
-			</div>`)
-			$('.product1').val("Product2");
-			$('.amount1').val(cart[i]);
-					break;
-		
-				case 2:
-					//var t = "Product3";
-					document.querySelector('.cart-body').insertAdjacentHTML(
-			'afterbegin',
-			`<div class="row">
-			<input readonly class="product2"></input>
-			<input readonly class="amount2"></input>
-			</div>`)
-			$('.product2').val("Product3");
-			$('.amount2').val(cart[i]);
-					break;
-			
-				case 3:
-					//var t = "Product4";
-					document.querySelector('.cart-body').insertAdjacentHTML(
-			'afterbegin',
-			`<div class="row">
-			<input readonly class="product3"></input>
-			<input readonly class="amount3"></input>
-			</div>`)
-			$('.product3').val("Product4");
-			$('.amount3').val(cart[i]);
-					break;
-			
-				case 4:
-					//var t = "Product5";
-					document.querySelector('.cart-body').insertAdjacentHTML(
-			'afterbegin',
-			`<div class="row">
-			<input readonly class="product4"></input>
-			<input readonly class="amount4"></input>
-			</div>`)
-			$('.product4').val("Product5");
-			$('.amount4').val(cart[i]);
-					break;
-
-				default:
-		
-				break;
+						'afterbegin',
+						`<div class="row">
+							<input readonly class="product${i}"></input>
+							<input readonly class="amount${i}"></input>
+						</div>`
+					);
+	
+					$(`.product${i}`).val(productName);
+					$(`.amount${i}`).val(cart[i]);
+				}
 			}
-		//$('.product').val(t);
-		//$('.amount').val(cart[i]);
-		}
 		}
 	}
 	
